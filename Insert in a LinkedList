@@ -19,14 +19,13 @@ void print(Node* &head){
         temp=temp->next;
     }
 }
-//add before the head
 void addhead(Node* &head,int d){
      Node* node=new Node(d);
      node->next=head;
      head=node;
     
 }
-//at at the end of linkedlist
+
 void addlast(Node* &head,int d){
     Node* temp=head;
     Node* p=new Node(d);
@@ -36,6 +35,19 @@ void addlast(Node* &head,int d){
     temp->next=p;
     
 }
+
+void addposition(Node* &head,int d,int pos){
+    Node* p=new Node(d);
+    Node* temp=head;
+    int c=1;
+    while(c<pos-1)
+    {
+        temp=temp->next;
+        c++;
+    }
+   p->next=temp->next;
+   temp->next=p;
+}
 int main()
     {
     Node* node1=new Node(10);
@@ -43,6 +55,7 @@ int main()
     addhead(head,2);
     addhead(head,18);
     addlast(head,7);
+    addposition(head,9,3);
     print(head);
 
    
