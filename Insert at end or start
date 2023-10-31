@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+#include<bits/stdc++.h>
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+};
+void print(Node* &head){
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+//add before the head
+void addhead(Node* &head,int d){
+     Node* node=new Node(d);
+     node->next=head;
+     head=node;
+    
+}
+//at at the end of linkedlist
+void addlast(Node* &head,int d){
+    Node* temp=head;
+    Node* p=new Node(d);
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=p;
+    
+}
+int main()
+    {
+    Node* node1=new Node(10);
+    Node* head=node1;
+    addhead(head,2);
+    addhead(head,18);
+    addlast(head,7);
+    print(head);
+
+   
+}
