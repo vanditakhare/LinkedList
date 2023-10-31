@@ -37,6 +37,10 @@ void addlast(Node* &head,int d){
 }
 
 void addposition(Node* &head,int d,int pos){
+    if(pos==1){
+    addhead(head,d);
+    return;
+   }
     Node* p=new Node(d);
     Node* temp=head;
     int c=1;
